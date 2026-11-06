@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">AIO Remote</string>
+    <string name="app_description">An all-in-one remote for computers and compatible TVs. Use your phone as a touchpad, keyboard, media controller, and presentation remote.</string>
+    <string name="tagline">Your phone. Every screen.\nOne remote.</string>
+    <string name="onboarding_subtitle">Use your phone as a touchpad,\nkeyboard, media controller,\nand more.</string>
+    <string name="get_started">Get Started</string>
+    <string name="nav_devices">Devices</string>
+    <string name="nav_remote">Remote</string>
+    <string name="nav_settings">Settings</string>
+    <string name="touchpad_hint">Move your finger to control</string>
+    <string name="left_click">Left Click</string>
+    <string name="right_click">Right Click</string>
+    <string name="middle_click">Middle</string>
+    <string name="add_device">Add Device</string>
+    <string name="error_invalid_pairing_code">Please enter a valid 6-digit pairing code.</string>
+    <string name="error_invalid_ip">Please enter a valid host address and port.</string>
+</resources>
