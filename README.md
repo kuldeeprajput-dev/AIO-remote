@@ -1,21 +1,19 @@
 # AIO Remote
 
-An all-in-one remote for computers and compatible TVs. Use your phone as a touchpad, keyboard, media controller, and presentation remote. For computer connections over Wi-Fi or USB tethering, run the desktop receiver.
+Use your Android phone as a touchpad, keyboard, and remote for compatible computers and TVs.
 
-## Project layout
+[![AIO Remote preview. Click to download the Android APK.](docs/aio-remote-preview.png)][apk]
 
-- `app/src/main/java/com/example/ui` contains the Compose screens, dialogs, and theme.
-- `app/src/main/java/com/example/connection` contains receiver discovery, transports, and the Wi-Fi/USB protocol.
-- `app/src/main/java/com/example/input` and `gestures` define remote commands and translate touchpad gestures into input.
-- `app/src/test` and `app/src/androidTest` contain Android tests.
-- `receiver` contains the Python receiver and its [setup instructions](receiver/README.md).
+[Download the Android APK][apk]
 
-## Build the Android app
+## Build the Android APK
 
-Use JDK 21 and the Android SDK with platform 36.1 installed. Set `ANDROID_HOME` or configure the SDK in Android Studio.
+Install JDK 17 and Android SDK Platform 36.1. Set `JAVA_HOME` to the JDK and `ANDROID_HOME` to the Android SDK directory, then run this from the repository root:
 
 ```sh
 ./gradlew :app:assembleDebug
 ```
 
-Gradle writes the APK to `app/build/outputs/apk/debug/app-debug.apk`.
+On Windows, run `gradlew.bat :app:assembleDebug`. The APK is written to `app/build/outputs/apk/debug/app-debug.apk`.
+
+[apk]: https://github.com/kuldeeprajput-dev/AIO-remote/releases/download/v1.0.0/AioRemote.apk
