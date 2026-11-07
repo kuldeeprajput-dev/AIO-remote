@@ -1,0 +1,239 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #181f2e;
+  --color-muted: #3f4b60;
+  --color-brand: #0755df;
+  --color-highlight: #0961f0;
+  --color-tint: #e1e9fb;
+}
+
+body {
+  background: #f4f6fd;
+  color: var(--color-ink);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+:where(a, summary):focus-visible {
+  outline: 3px solid var(--color-highlight);
+  outline-offset: 5px;
+}
+
+.hero {
+  background: radial-gradient(ellipse at 50% 48%, #fafbff, #f3f5fc 75%);
+}
+
+.hero::before,
+.hero::after {
+  position: absolute;
+  z-index: -1;
+  width: clamp(15rem, 38vw, 42rem);
+  aspect-ratio: 1.3;
+  border-radius: 45% 55% 68% 32%;
+  background: #e1eafb;
+  content: "";
+  pointer-events: none;
+}
+
+.hero::before {
+  top: -12%;
+  right: 87%;
+  rotate: -27deg;
+}
+
+.hero::after {
+  bottom: -23%;
+  left: 76%;
+  rotate: -31deg;
+}
+
+.phone-preview {
+  aspect-ratio: 1 / 1.06;
+  container-type: inline-size;
+}
+
+.phone {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 49%;
+  aspect-ratio: 1 / 2.03;
+  padding: 8cqw 2.8cqw 2.7cqw;
+  border: 0.65cqw solid #202836;
+  border-radius: 6cqw;
+  background: linear-gradient(155deg, #fbfcff, #edf2fa);
+  outline: 0.22cqw solid #a2aab7;
+  color: #171e2b;
+  font-size: 2cqw;
+}
+
+.phone::before {
+  content: "";
+  position: absolute;
+  top: 2cqw;
+  left: 50%;
+  width: 2cqw;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #151c27;
+  translate: -50%;
+}
+
+.phone--touch {
+  top: 3%;
+  left: 7%;
+  rotate: -4deg;
+}
+
+.phone--tv {
+  top: 10%;
+  right: 7%;
+  width: 44%;
+  rotate: 8deg;
+  padding-top: 10cqw;
+}
+
+.phone svg {
+  width: 3.5cqw;
+  height: 3.5cqw;
+  flex: none;
+  stroke-width: 2.1;
+}
+
+.phone-brand {
+  display: flex;
+  align-items: center;
+  gap: 1.7cqw;
+  margin-bottom: 4cqw;
+  font-size: 3.1cqw;
+  font-weight: 700;
+}
+
+.phone-brand span,
+.phone-nav i {
+  display: grid;
+  place-items: center;
+  padding: 1cqw;
+  border-radius: 1.5cqw;
+  background: var(--color-brand);
+  color: white;
+}
+
+.phone-tabs,
+.phone-volume {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 0.35cqw;
+  padding: 0.55cqw;
+  border-radius: 9cqw;
+  background: #e9eef7;
+  white-space: nowrap;
+}
+
+.phone--tv .phone-tabs {
+  font-size: 1.7cqw;
+}
+
+.phone-tabs b {
+  padding: 0.85cqw 1.25cqw;
+  border-radius: 9cqw;
+  background: var(--color-brand);
+  color: white;
+}
+
+.phone-pad {
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 1cqw;
+  flex: 1;
+  margin-top: 2cqw;
+  border: 1px solid #dce4f1;
+  border-radius: 3cqw;
+  background: #e7edf7;
+  color: #495b75;
+}
+
+.phone-pad svg {
+  width: 6cqw;
+  height: 6cqw;
+}
+
+.phone-clicks,
+.phone-nav,
+.phone-actions {
+  display: flex;
+  justify-content: space-around;
+  gap: 1.5cqw;
+  margin-top: 2cqw;
+  text-align: center;
+}
+
+.phone-clicks span,
+.phone-nav span {
+  display: grid;
+  flex: 1;
+  place-items: center;
+  gap: 0.65cqw;
+}
+
+.phone-clicks span {
+  border-radius: 2.5cqw;
+  background: #e9eef7;
+  padding: 1.8cqw 0;
+}
+
+.phone-nav {
+  padding-top: 1.4cqw;
+  border-top: 1px solid #dde4ef;
+  font-size: 1.65cqw;
+}
+
+.phone-nav i {
+  padding: 0.3cqw 1.8cqw;
+  border-radius: 9cqw;
+}
+
+.phone-actions svg {
+  box-sizing: content-box;
+  border-radius: 50%;
+  background: #e9eef7;
+  padding: 1.7cqw;
+}
+
+.phone-dpad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  place-items: center;
+  align-self: center;
+  width: 82%;
+  aspect-ratio: 1;
+  margin: auto 0;
+  border: 1px solid #dce4f1;
+  border-radius: 50%;
+  background: #e9eef7;
+}
+
+.phone-dpad > :first-child { grid-column: 2; }
+.phone-dpad > :nth-child(2) { grid-area: 2 / 1; }
+.phone-dpad > :nth-child(4) { grid-area: 2 / 3; }
+.phone-dpad > :last-child { grid-area: 3 / 2; }
+
+.phone-dpad span {
+  grid-area: 2 / 2;
+  display: grid;
+  place-items: center;
+  width: 110%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: white;
+  border: 1px solid #dce4f1;
+  font-weight: 700;
+}
+
+.phone-volume {
+  margin-bottom: 8cqw;
+  padding: 1.6cqw 1cqw;
+}

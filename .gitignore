@@ -15,4 +15,5 @@ build/
 .cxx
 .env
 debug.keystore
+*.apk
 __pycache__/
